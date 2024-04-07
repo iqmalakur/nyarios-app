@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  #root {
+    height: 100vh;
+    @apply flex;
+  }
+}
+
+@layer components {
+  #contact-container {
+    width: 20vw;
+  }
+
+  #chat-container {
+    width: 80vw;
+    background-image: url(/img/bg/footer_lodyas.png);
+  }
+}
