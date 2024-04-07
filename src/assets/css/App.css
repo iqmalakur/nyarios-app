@@ -11,11 +11,11 @@
 
 @layer components {
   #contact-container {
-    width: 20vw;
+    width: 25vw;
   }
 
   #chat-container {
-    width: 80vw;
+    width: 75vw;
     background-image: url(/img/bg/footer_lodyas.png);
   }
 }
