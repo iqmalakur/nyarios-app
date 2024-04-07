@@ -5,7 +5,7 @@ class UserBar extends Component {
     return (
       <div className="user-bar h-[10%] px-3 py-2 bg-slate-700">
         <img
-          src="/img/profile/hatsunemiku.png"
+          src="/img/profile/luffy.jpg"
           alt="User"
           className="w-12 h-12 rounded-full border border-solid border-slate-800"
         />
