@@ -18,4 +18,20 @@
     width: 75vw;
     background-image: url(/img/bg/footer_lodyas.png);
   }
+
+  .small-scrollbar::-webkit-scrollbar {
+    @apply w-1 opacity-0;
+  }
+
+  .small-scrollbar::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px transparent;
+  }
+
+  .small-scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-xl bg-transparent;
+  }
+
+  .small-scrollbar:hover::-webkit-scrollbar-thumb {
+    @apply bg-slate-600;
+  }
 }
