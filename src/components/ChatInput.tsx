@@ -3,7 +3,7 @@ import { Component, ReactNode } from "react";
 class ChatInput extends Component {
   render(): ReactNode {
     return (
-      <div className="h-[15%] flex justify-center items-center">
+      <div className="h-[12%] flex justify-center items-start">
         <form action="" className="w-[80%] flex justify-center items-center">
           <input
             type="text"

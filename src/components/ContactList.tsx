@@ -69,12 +69,13 @@ class ContactList extends Component {
 
     return (
       <div className="contact-list small-scrollbar h-[90%] overflow-x-hidden overflow-y-auto">
-        {contacts.map((user) => (
+        {contacts.map((user, key) => (
           <Contact
             name={user.name}
             profile={user.profile}
             lastChat={user.lastChat}
             lastChatDate={user.lastChatDate}
+            key={key}
           />
         ))}
       </div>
