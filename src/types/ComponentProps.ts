@@ -9,7 +9,7 @@ export interface ChatBarProps {
 export interface ChatProps {
   message: string;
   profile: string;
-  time: string;
+  date: Date;
   role: "sender" | "receiver";
   isFirstChatOnGroup?: boolean;
 }

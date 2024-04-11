@@ -16,40 +16,19 @@ class ChatList extends Component<ChatListProps> {
           ref={(div) => this.handleScrollChat(div, this.props.chatListRef)}
         >
           {chats.map((chat, key) => {
-            if (key === 0) {
-              return (
-                <Chat
-                  message={chat.message}
-                  profile={chat.profile}
-                  time={chat.time}
-                  role={chat.role}
-                  key={key}
-                  isFirstChatOnGroup={true}
-                />
-              );
-            }
-
-            if (chat.role === chats[key - 1].role) {
-              return (
-                <Chat
-                  message={chat.message}
-                  profile={chat.profile}
-                  time={chat.time}
-                  role={chat.role}
-                  key={key}
-                  isFirstChatOnGroup={false}
-                />
-              );
+            let isFirstChatOnGroup = true;
+            if (key !== 0 && chat.role === chats[key - 1].role) {
+              isFirstChatOnGroup = false;
             }
 
             return (
               <Chat
                 message={chat.message}
                 profile={chat.profile}
-                time={chat.time}
+                date={chat.date}
                 role={chat.role}
                 key={key}
-                isFirstChatOnGroup={true}
+                isFirstChatOnGroup={isFirstChatOnGroup}
               />
             );
           })}

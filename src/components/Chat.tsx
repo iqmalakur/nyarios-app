@@ -1,5 +1,6 @@
 import { Component, ReactNode } from "react";
 import { ChatProps } from "../types/ComponentProps";
+import formatTime from "../utilities/formatTime";
 
 class Chat extends Component<ChatProps> {
   constructor(props: ChatProps) {
@@ -8,7 +9,7 @@ class Chat extends Component<ChatProps> {
   }
 
   render(): ReactNode {
-    const { message, role, time, profile, isFirstChatOnGroup } = this.props;
+    const { message, role, date, profile, isFirstChatOnGroup } = this.props;
     const shortMessage = message.length < 50;
     const filteredMessage = message.replace(
       /[^\s]{55,}/gm,
@@ -28,7 +29,7 @@ class Chat extends Component<ChatProps> {
               shortMessage ? "bottom-3" : "bottom-2"
             }`}
           >
-            {time}
+            {formatTime(date)}
           </span>
         </div>
         {isFirstChatOnGroup ? (
