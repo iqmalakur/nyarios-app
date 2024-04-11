@@ -14,6 +14,10 @@ export interface ChatProps {
   isFirstChatOnGroup?: boolean;
 }
 
+export interface ChatDividerProps {
+  date: Date;
+}
+
 export interface ChatContainerProps {
   profile: string;
 }
