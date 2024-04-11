@@ -1,5 +1,5 @@
 import { Component, ReactNode } from "react";
-import ChatProps from "../types/ChatProps";
+import { ChatProps } from "../types/ComponentProps";
 
 class Chat extends Component<ChatProps> {
   render(): ReactNode {

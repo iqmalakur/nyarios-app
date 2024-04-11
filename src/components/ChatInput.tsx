@@ -1,12 +1,26 @@
-import { Component, ReactNode } from "react";
+import { Component, ReactNode, RefObject, createRef } from "react";
+import { ChatInputProps } from "../types/ComponentProps";
 
-class ChatInput extends Component {
+class ChatInput extends Component<ChatInputProps> {
+  private chatInputRef: RefObject<HTMLInputElement>;
+
+  constructor(props: ChatInputProps) {
+    super(props);
+    this.chatInputRef = createRef<HTMLInputElement>();
+  }
+
   render(): ReactNode {
+    const { onSendChat } = this.props;
     return (
       <div className="h-[12%] flex justify-center items-start">
-        <form action="" className="w-[80%] flex justify-center items-center">
+        <form
+          action=""
+          className="w-[80%] flex justify-center items-center"
+          onSubmit={(event) => onSendChat(event, this.chatInputRef.current)}
+        >
           <input
             type="text"
+            ref={this.chatInputRef}
             className="w-3/4 h-12 bg-slate-900 text-white text-lg outline-none shadow px-5 mx-5 rounded-full"
             placeholder="Type chat here..."
           />

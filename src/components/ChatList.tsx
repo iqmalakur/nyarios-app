@@ -1,73 +1,47 @@
-import { Component, ReactNode } from "react";
+import { Component, ReactNode, RefObject } from "react";
 import Chat from "./Chat";
+import { ChatListProps } from "../types/ComponentProps";
 
-class ChatList extends Component {
+class ChatList extends Component<ChatListProps> {
+  constructor(props: ChatListProps) {
+    super(props);
+  }
   render(): ReactNode {
+    const { chats } = this.props;
+
     return (
       <div className="h-[78%] flex items-end">
         <div
-          className="w-full h-fit max-h-full px-24 overflow-x-hidden overflow-y-auto small-scrollbar"
-          ref={this.handleScrollChat}
+          className="w-full h-fit max-h-full px-20 overflow-x-hidden overflow-y-auto small-scrollbar"
+          ref={(div) => this.handleScrollChat(div, this.props.chatListRef)}
         >
-          <Chat
-            message="Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor lkjkldsj jsdlfkjslad jslakd jfd"
-            profile="/img/profile/luffy.jpg"
-            time="08.50"
-            role="sender"
-          />
-          <Chat
-            message="Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor"
-            profile="/img/profile/zoro.jpg"
-            time="08.51"
-            role="receiver"
-          />
-          <Chat
-            message="Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor lkjkldsj jsdlfkjslad jslakd jfd"
-            profile="/img/profile/luffy.jpg"
-            time="08.50"
-            role="sender"
-          />
-          <Chat
-            message="Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor"
-            profile="/img/profile/zoro.jpg"
-            time="08.51"
-            role="receiver"
-          />
-          <Chat
-            message="Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor lkjkldsj jsdlfkjslad jslakd jfd"
-            profile="/img/profile/luffy.jpg"
-            time="08.50"
-            role="sender"
-          />
-          <Chat
-            message="Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor"
-            profile="/img/profile/zoro.jpg"
-            time="08.51"
-            role="receiver"
-          />
-          <Chat
-            message="Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor lkjkldsj jsdlfkjslad jslakd jfd"
-            profile="/img/profile/luffy.jpg"
-            time="08.50"
-            role="sender"
-          />
-          <Chat
-            message="Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor"
-            profile="/img/profile/zoro.jpg"
-            time="08.51"
-            role="receiver"
-          />
+          {chats.map((chat, key) => (
+            <Chat
+              message={chat.message}
+              profile={chat.profile}
+              time={chat.time}
+              role={chat.role}
+              key={key}
+            />
+          ))}
         </div>
       </div>
     );
   }
 
-  handleScrollChat(div: HTMLDivElement) {
-    div.scrollTo({
-      left: 0,
-      top: div.scrollHeight,
-      behavior: "instant",
-    });
+  handleScrollChat(
+    div: HTMLDivElement | null,
+    chatListRef: RefObject<HTMLDivElement>
+  ): RefObject<HTMLDivElement> {
+    if (div) {
+      div.scrollTo({
+        left: 0,
+        top: div.scrollHeight,
+        behavior: "instant",
+      });
+    }
+
+    return chatListRef;
   }
 }
 

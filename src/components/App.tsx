@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <>
         <ContactContainer />
-        <ChatContainer />
+        <ChatContainer profile="/img/profile/luffy.jpg" />
       </>
     );
   }

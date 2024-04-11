@@ -1,6 +1,6 @@
 import { Component, ReactNode } from "react";
 import Contact from "./Contact";
-import UserContactProps from "../types/UserContactProps";
+import { UserContactProps } from "../types/ComponentProps";
 
 class ContactList extends Component {
   render(): ReactNode {
