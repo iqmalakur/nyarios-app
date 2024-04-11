@@ -22,6 +22,7 @@ class ChatInput extends Component<ChatInputProps> {
             type="text"
             ref={this.chatInputRef}
             className="w-3/4 h-12 bg-slate-900 text-white text-lg outline-none shadow px-5 mx-5 rounded-full"
+            autoFocus={true}
             placeholder="Type chat here..."
           />
           <button className="w-14 h-14 bg-sky-600 shadow rounded-full flex justify-center items-center">

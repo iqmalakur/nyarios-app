@@ -11,6 +11,7 @@ export interface ChatProps {
   profile: string;
   time: string;
   role: "sender" | "receiver";
+  isFirstChatOnGroup?: boolean;
 }
 
 export interface ChatContainerProps {

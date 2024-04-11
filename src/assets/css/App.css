@@ -36,18 +36,18 @@
   }
 
   .chat.sender {
-    @apply bg-sky-900 ml-auto rounded-tr-none;
+    @apply bg-sky-900 ml-auto;
   }
 
   .chat.receiver {
     @apply bg-sky-950 mr-auto;
   }
 
-  .chat.sender::after {
+  .chat.sender.first-on-group::after {
     @apply content-[''] block absolute w-14 h-7 bg-[url(/img/icon/sender-polygon.png)] bg-no-repeat top-[-1px] -right-5;
   }
 
-  .chat.receiver::before {
+  .chat.receiver.first-on-group::before {
     @apply content-[''] block absolute w-14 h-7 bg-[url(/img/icon/receiver-polygon.png)] bg-no-repeat top-[-1px] -left-3;
   }
 
