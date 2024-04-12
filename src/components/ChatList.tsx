@@ -1,6 +1,6 @@
 import { Component, ReactNode, RefObject } from "react";
 import Chat from "./Chat";
-import { ChatListProps, ChatProps } from "../types/ComponentProps";
+import { ChatListProps } from "../types/ComponentProps";
 import ChatDivider from "./ChatDivider";
 
 class ChatList extends Component<ChatListProps> {
@@ -14,16 +14,33 @@ class ChatList extends Component<ChatListProps> {
     const sortedChats = [...chats];
     sortedChats.sort((a, b) => a.date.getTime() - b.date.getTime());
 
-    const chatByDates: Array<ChatProps | Date> = [];
+    const chatListItems: ReactNode[] = [];
 
-    sortedChats.map((chat, index) => {
-      if (index === 0) {
-        chatByDates.push(chat.date);
-      } else if (!this.isSameDates(chat.date, sortedChats[index - 1].date)) {
-        chatByDates.push(chat.date);
+    sortedChats.map((chat, key) => {
+      if (
+        key === 0 ||
+        !this.isSameDates(chat.date, sortedChats[key - 1].date)
+      ) {
+        chatListItems.push(
+          <ChatDivider date={chat.date} key={"divider-" + key} />
+        );
       }
 
-      chatByDates.push(chat);
+      let isFirstChatOnGroup = true;
+      if (key !== 0 && chat.role === sortedChats[key - 1].role) {
+        isFirstChatOnGroup = false;
+      }
+
+      chatListItems.push(
+        <Chat
+          message={chat.message}
+          profile={chat.profile}
+          date={chat.date}
+          role={chat.role}
+          key={"chat-" + key}
+          isFirstChatOnGroup={isFirstChatOnGroup}
+        />
+      );
     });
 
     return (
@@ -32,35 +49,7 @@ class ChatList extends Component<ChatListProps> {
           className="w-full h-fit max-h-full px-20 py-4 overflow-x-hidden overflow-y-auto small-scrollbar"
           ref={(div) => this.handleScrollChat(div, this.props.chatListRef)}
         >
-          {chatByDates.map((element, key) => {
-            if (element instanceof Date) {
-              console.log("it is date");
-              return <ChatDivider date={element} key={key} />;
-            }
-
-            const chat = element;
-            const elementBefore = chatByDates[key - 1];
-            let isFirstChatOnGroup = true;
-
-            if (
-              key !== 1 &&
-              !(elementBefore instanceof Date) &&
-              chat.role === elementBefore.role
-            ) {
-              isFirstChatOnGroup = false;
-            }
-
-            return (
-              <Chat
-                message={chat.message}
-                profile={chat.profile}
-                date={chat.date}
-                role={chat.role}
-                key={key}
-                isFirstChatOnGroup={isFirstChatOnGroup}
-              />
-            );
-          })}
+          {chatListItems}
         </div>
       </div>
     );
