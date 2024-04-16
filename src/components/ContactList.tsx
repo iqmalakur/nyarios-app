@@ -8,61 +8,71 @@ class ContactList extends Component {
       {
         name: "Roronoa Zoro",
         profile: "/img/profile/zoro.jpg",
-        lastChat: "Lorem ipsum dolor sit amet, consect...",
+        lastChat:
+          "Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor",
         lastChatDate: new Date(),
       },
       {
         name: "Roronoa Zoro",
         profile: "/img/profile/zoro.jpg",
-        lastChat: "Lorem ipsum dolor sit amet, consect...",
+        lastChat:
+          "Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor",
         lastChatDate: new Date(),
       },
       {
         name: "Roronoa Zoro",
         profile: "/img/profile/zoro.jpg",
-        lastChat: "Lorem ipsum dolor sit amet, consect...",
+        lastChat:
+          "Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor",
         lastChatDate: new Date(),
       },
       {
         name: "Roronoa Zoro",
         profile: "/img/profile/zoro.jpg",
-        lastChat: "Lorem ipsum dolor sit amet, consect...",
+        lastChat:
+          "Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor",
         lastChatDate: new Date(),
       },
       {
         name: "Roronoa Zoro",
         profile: "/img/profile/zoro.jpg",
-        lastChat: "Lorem ipsum dolor sit amet, consect...",
+        lastChat:
+          "Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor",
         lastChatDate: new Date(),
       },
       {
         name: "Roronoa Zoro",
         profile: "/img/profile/zoro.jpg",
-        lastChat: "Lorem ipsum dolor sit amet, consect...",
+        lastChat:
+          "Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor",
         lastChatDate: new Date(),
       },
       {
         name: "Roronoa Zoro",
         profile: "/img/profile/zoro.jpg",
-        lastChat: "Lorem ipsum dolor sit amet, consect...",
+        lastChat:
+          "Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor",
         lastChatDate: new Date(),
       },
       {
         name: "Roronoa Zoro",
         profile: "/img/profile/zoro.jpg",
-        lastChat: "Lorem ipsum dolor sit amet, consect...",
+        lastChat:
+          "Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor",
         lastChatDate: new Date(),
       },
       {
         name: "Roronoa Zoro",
         profile: "/img/profile/zoro.jpg",
-        lastChat: "Lorem ipsum dolor sit amet, consect...",
+        lastChat:
+          "Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor",
         lastChatDate: new Date(),
       },
       {
         name: "Roronoa Zoro",
         profile: "/img/profile/zoro.jpg",
-        lastChat: "Lorem ipsum dolor sit amet, consect...",
+        lastChat:
+          "Lorem Ipsum Dolor Sit Amet Consectetur Adipisting Elit Et Labor ksdjfsdkjfskldfjsdlfjsdfjljsdklfj lsdjflksjd fklj",
         lastChatDate: new Date(),
       },
     ];

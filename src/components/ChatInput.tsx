@@ -12,7 +12,7 @@ class ChatInput extends Component<ChatInputProps> {
   render(): ReactNode {
     const { onSendChat } = this.props;
     return (
-      <div className="h-[12%] flex justify-center items-start">
+      <div className="pb-4 absolute bottom-0 left-0 right-0 flex justify-center items-start">
         <form
           action=""
           className="w-[80%] flex justify-center items-center"

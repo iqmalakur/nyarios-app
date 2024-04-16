@@ -44,7 +44,7 @@ class ChatList extends Component<ChatListProps> {
     });
 
     return (
-      <div className="h-[78%] flex items-end">
+      <div className="h-full pb-16 flex items-end">
         <div
           className="w-full h-fit max-h-full px-20 py-4 overflow-x-hidden overflow-y-auto small-scrollbar"
           ref={(div) => this.handleScrollChat(div, this.props.chatListRef)}

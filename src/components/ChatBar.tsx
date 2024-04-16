@@ -6,7 +6,7 @@ class ChatBar extends Component<ChatBarProps> {
     const { name, profile, status } = this.props;
 
     return (
-      <div className="h-[10%] px-8 py-2 bg-slate-700 flex">
+      <div className="px-8 py-2 bg-slate-700 absolute top-0 left-0 right-0 flex">
         <div className="mx-5">
           <img
             src={profile}

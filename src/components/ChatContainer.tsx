@@ -57,7 +57,7 @@ class ChatContainer extends Component<ChatContainerProps, ChatContainerState> {
 
   render(): ReactNode {
     return (
-      <div id="chat-container" className="h-full">
+      <div id="chat-container" className="h-full pt-16 relative">
         <ChatBar
           name="Roronoa Zoro"
           profile="/img/profile/zoro.jpg"
