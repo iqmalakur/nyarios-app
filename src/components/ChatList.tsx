@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from "react";
 import Chat from "./Chat";
 import { ChatListProps } from "@/types/ComponentProps";

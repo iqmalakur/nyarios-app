@@ -1,3 +1,5 @@
+"use client";
+
 import { LegacyRef, ReactNode, useRef } from "react";
 import { ChatInputProps } from "@/types/ComponentProps";
 

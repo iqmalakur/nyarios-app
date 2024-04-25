@@ -1,3 +1,5 @@
+"use client";
+
 import { FormEvent, ReactNode, useRef, useState } from "react";
 import { ChatContainerProps, ChatProps } from "@/types/ComponentProps";
 import ChatInput from "./ChatInput";
