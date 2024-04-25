@@ -1,4 +1,4 @@
-import { FormEvent, RefObject } from "react";
+import { FormEvent, MutableRefObject, RefObject } from "react";
 
 export interface ChatBarProps {
   name: string;
@@ -23,7 +23,7 @@ export interface ChatContainerProps {
 }
 
 export interface ChatListProps {
-  chatListRef: RefObject<HTMLDivElement>;
+  chatListRef: MutableRefObject<HTMLDivElement | undefined>;
   chats: ChatProps[];
 }
 
@@ -35,5 +35,8 @@ export interface UserContactProps {
 }
 
 export interface ChatInputProps {
-  onSendChat: (event: FormEvent, chatInput: HTMLInputElement | null) => void;
+  onSendChat: (
+    event: FormEvent,
+    chatInput: HTMLInputElement | undefined
+  ) => void;
 }
