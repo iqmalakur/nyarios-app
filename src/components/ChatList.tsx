@@ -1,64 +1,42 @@
-import { Component, ReactNode, RefObject } from "react";
+"use client";
+
+import { ReactNode } from "react";
 import Chat from "./Chat";
-import { ChatListProps } from "../types/ComponentProps";
+import { ChatListProps } from "@/types/ComponentProps";
 import ChatDivider from "./ChatDivider";
+import isSameDates from "@/utilities/isSameDates";
 
-class ChatList extends Component<ChatListProps> {
-  constructor(props: ChatListProps) {
-    super(props);
-  }
+const ChatList = (props: ChatListProps): ReactNode => {
+  const sortedChats = [...props.chats];
+  sortedChats.sort((a, b) => a.date.getTime() - b.date.getTime());
 
-  render(): ReactNode {
-    const { chats } = this.props;
+  const chatListItems: ReactNode[] = [];
 
-    const sortedChats = [...chats];
-    sortedChats.sort((a, b) => a.date.getTime() - b.date.getTime());
-
-    const chatListItems: ReactNode[] = [];
-
-    sortedChats.map((chat, key) => {
-      if (
-        key === 0 ||
-        !this.isSameDates(chat.date, sortedChats[key - 1].date)
-      ) {
-        chatListItems.push(
-          <ChatDivider date={chat.date} key={"divider-" + key} />
-        );
-      }
-
-      let isFirstChatOnGroup = true;
-      if (key !== 0 && chat.role === sortedChats[key - 1].role) {
-        isFirstChatOnGroup = false;
-      }
-
+  sortedChats.map((chat, key) => {
+    if (key === 0 || !isSameDates(chat.date, sortedChats[key - 1].date)) {
       chatListItems.push(
-        <Chat
-          message={chat.message}
-          profile={chat.profile}
-          date={chat.date}
-          role={chat.role}
-          key={"chat-" + key}
-          isFirstChatOnGroup={isFirstChatOnGroup}
-        />
+        <ChatDivider date={chat.date} key={"divider-" + key} />
       );
-    });
+    }
 
-    return (
-      <div className="h-full pb-16 flex items-end">
-        <div
-          className="w-full h-fit max-h-full px-20 py-4 overflow-x-hidden overflow-y-auto small-scrollbar"
-          ref={(div) => this.handleScrollChat(div, this.props.chatListRef)}
-        >
-          {chatListItems}
-        </div>
-      </div>
+    let isFirstChatOnGroup = true;
+    if (key !== 0 && chat.role === sortedChats[key - 1].role) {
+      isFirstChatOnGroup = false;
+    }
+
+    chatListItems.push(
+      <Chat
+        message={chat.message}
+        profile={chat.profile}
+        date={chat.date}
+        role={chat.role}
+        key={"chat-" + key}
+        isFirstChatOnGroup={isFirstChatOnGroup}
+      />
     );
-  }
+  });
 
-  handleScrollChat(
-    div: HTMLDivElement | null,
-    chatListRef: RefObject<HTMLDivElement>
-  ): RefObject<HTMLDivElement> {
+  const handleScrollChat = (div: HTMLDivElement | null): void => {
     if (div) {
       div.scrollTo({
         left: 0,
@@ -67,16 +45,19 @@ class ChatList extends Component<ChatListProps> {
       });
     }
 
-    return chatListRef;
-  }
+    props.chatListRef.current = div as HTMLDivElement | undefined;
+  };
 
-  isSameDates(a: Date, b: Date): boolean {
-    const isYearSame = a.getFullYear() === b.getFullYear();
-    const isMonthSame = a.getMonth() === b.getMonth();
-    const isDaySame = a.getDate() === b.getDate();
-
-    return isYearSame && isMonthSame && isDaySame;
-  }
-}
+  return (
+    <div className="h-full pb-20 flex items-end">
+      <div
+        className="w-full h-fit max-h-full px-20 py-4 overflow-x-hidden overflow-y-auto small-scrollbar"
+        ref={handleScrollChat}
+      >
+        {chatListItems}
+      </div>
+    </div>
+  );
+};
 
 export default ChatList;
