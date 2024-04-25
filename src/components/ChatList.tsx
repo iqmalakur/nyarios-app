@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import Chat from "./Chat";
-import { ChatListProps } from "../types/ComponentProps";
+import { ChatListProps } from "@/types/ComponentProps";
 import ChatDivider from "./ChatDivider";
 import isSameDates from "@/utilities/isSameDates";
 

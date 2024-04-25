@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ChatDividerProps } from "../types/ComponentProps";
+import { ChatDividerProps } from "@/types/ComponentProps";
 import getDayFromNumber from "@/utilities/getDayFromNumber";
 
 const ChatDivider = ({ date }: ChatDividerProps): ReactNode => {

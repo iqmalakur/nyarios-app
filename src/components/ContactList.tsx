@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import Contact from "./Contact";
-import { UserContactProps } from "../types/ComponentProps";
+import { UserContactProps } from "@/types/ComponentProps";
 
 let dummyContacts: UserContactProps[] = [];
 for (let i = 0; i < 20; i++) {

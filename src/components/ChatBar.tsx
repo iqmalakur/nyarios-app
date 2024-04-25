@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ChatBarProps } from "../types/ComponentProps";
+import { ChatBarProps } from "@/types/ComponentProps";
 
 const ChatBar = (props: ChatBarProps): ReactNode => {
   const { name, profile, status } = props;

@@ -1,5 +1,5 @@
 import { FormEvent, ReactNode, useRef, useState } from "react";
-import { ChatContainerProps, ChatProps } from "../types/ComponentProps";
+import { ChatContainerProps, ChatProps } from "@/types/ComponentProps";
 import ChatInput from "./ChatInput";
 import ChatList from "./ChatList";
 import ChatBar from "./ChatBar";

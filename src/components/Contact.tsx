@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import { UserContactProps } from "../types/ComponentProps";
-import formatTime from "../utilities/formatTime";
+import { UserContactProps } from "@/types/ComponentProps";
+import formatTime from "@/utilities/formatTime";
 
 const Contact = (props: UserContactProps): ReactNode => {
   const { profile, name, lastChat, lastChatDate } = props;

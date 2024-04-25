@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import { ChatProps } from "../types/ComponentProps";
-import formatTime from "../utilities/formatTime";
+import { ChatProps } from "@/types/ComponentProps";
+import formatTime from "@/utilities/formatTime";
 
 const Chat = (props: ChatProps): ReactNode => {
   const { message, role, date, profile, isFirstChatOnGroup } = props;

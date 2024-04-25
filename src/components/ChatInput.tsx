@@ -1,5 +1,5 @@
 import { LegacyRef, ReactNode, useRef } from "react";
-import { ChatInputProps } from "../types/ComponentProps";
+import { ChatInputProps } from "@/types/ComponentProps";
 
 const ChatInput = ({ onSendChat }: ChatInputProps): ReactNode => {
   const chatInputRef = useRef<HTMLInputElement>();
