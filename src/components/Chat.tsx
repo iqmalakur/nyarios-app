@@ -13,7 +13,7 @@ const Chat = (props: ChatProps): ReactNode => {
           shortMessage ? "p-4 pr-12" : "p-4 pb-7"
         } ${isFirstChatOnGroup ? "mt-2 first-on-group" : "mt-1"}`}
       >
-        <p className="break-words">{message}</p>
+        <p className="break-words text-sm relative">{message}</p>
         <span
           className={`text-xs text-slate-300 absolute right-2 ${
             shortMessage ? "bottom-3" : "bottom-2"

@@ -49,7 +49,7 @@ const ChatList = (props: ChatListProps): ReactNode => {
   };
 
   return (
-    <div className="h-full pb-16 flex items-end">
+    <div className="h-full pb-20 flex items-end">
       <div
         className="w-full h-fit max-h-full px-20 py-4 overflow-x-hidden overflow-y-auto small-scrollbar"
         ref={handleScrollChat}

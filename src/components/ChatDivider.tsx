@@ -17,7 +17,7 @@ const ChatDivider = ({ date }: ChatDividerProps): ReactNode => {
 
   return (
     <div className="chat-divider flex justify-center items-center">
-      <span className="text-white bg-sky-950 px-4 py-2 my-4 rounded-full inline-block">
+      <span className="text-white text-xs bg-sky-950 px-4 py-2 my-4 rounded-full inline-block">
         {text}
       </span>
     </div>
