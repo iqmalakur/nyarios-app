@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from "react";
 import { ChatDividerProps } from "@/types/ComponentProps";
 import getDayFromNumber from "@/utilities/getDayFromNumber";

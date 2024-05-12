@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from "react";
 import { UserContactProps } from "@/types/ComponentProps";
 import formatTime from "@/utilities/formatTime";
