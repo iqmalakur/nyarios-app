@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from "react";
 import { ChatProps } from "@/types/ComponentProps";
 import formatTime from "@/utilities/formatTime";

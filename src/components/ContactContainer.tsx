@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from "react";
 import UserBar from "./UserBar";
 import ContactList from "./ContactList";
