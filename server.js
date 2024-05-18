@@ -2,6 +2,12 @@ const { createServer } = require("http");
 const next = require("next");
 const { Server } = require("socket.io");
 
+const { users } = require("./src/data/user.js");
+const { chats } = require("./src/data/chat.js");
+const { messages } = require("./src/data/message.js");
+
+console.log(messages);
+
 const dev = process.env.NODE_ENV !== "production";
 const hostname = "localhost";
 const port = 3000;
@@ -13,8 +19,8 @@ app.prepare().then(() => {
   const httpServer = createServer(handler);
   const io = new Server(httpServer);
 
-  io.on("connection", () => {
-    console.log("client is connected!");
+  io.on("connection", (socket) => {
+    socket.emit(users);
   });
 
   httpServer
